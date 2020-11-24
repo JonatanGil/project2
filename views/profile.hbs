@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> headAttributes}}
+    <link href="/css/profile.css" rel="stylesheet">
+    <script defer src="js/profile.js"></script>
+
+</head>
+
+<body class="c-app c-dark-theme">
+
+    {{> navSidebar}}
+
+    <div class="c-wrapper">
+
+        {{> header}}
+
+        <div class="c-body p-2">
+
+            <div id="gridProfile">
+                <div class="card text-center" id="profileInfo">
+                    <div class="card-body pt-1" style="justify-content: center;">
+                        <h5 class="card-title pb-3" style="border-bottom: 1px solid rgb(20, 19, 19);">Profile</h5>
+                        <p class="card-text">
+                            {{#if user}}
+                        <div id="noImage">
+                            <svg class="bi bi-person-fill" width="4em" height="4em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <img id="img" style="justify-self: center;" width="200" class="mb-2">
+                        <h4>Nombre: {{user.name}}</h4>
+                        <h4>Email: {{user.email}}</h4>
+                        {{/if}}
+                        </p>
+                        <div class="d-flex pt-3" style="justify-content: center;">
+                            <a href="/settings" class="btn btn-pill btn-block btn-secondary active w-75"
+                                style="justify-self: center;">Setting</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h5 class="card-title m-2 text-center" style="border-bottom: 1px solid rgb(20, 19, 19);">
+                        Favoritos</h5>
+                    <div class="card-body cardGrid p-2">
+                        {{#if moviesFav}}{{#each moviesFav}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <div class="card-header bg-transparent">
+                                    <h6 class="card-title">{{this.title}}</h6>
+                                </div>
+                                <img src="{{#if this.poster_path}}https://image.tmdb.org/t/p/w400{{this.poster_path}}
+                                    {{else}}https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700{{/if}}"
+                                    alt="MoviePoster" id="MoviePoster">
+                                <p class="card-text"></p>
+                                <a class="DetailMovie  mb-2" href="/detail/?idMovie={{this.id}}"
+                                    style="cursor: pointer;"><button
+                                        class="btn btn-secondary detail">Detalles</button></a>
+                            </div>
+                        </div>
+                        {{/each}}{{else}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <img class="card-img"
+                                    src="https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700"
+                                    alt="MoviePoster">
+                            </div>
+                        </div>
+                        {{/if}}
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-title m-2 text-center" style="border-bottom: 1px solid rgb(20, 19, 19);">
+                        Visto</h5>
+                    <div class="card-body cardGrid p-2">
+                        {{#if moviesView}} {{#each moviesView}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <div class="card-header bg-transparent">
+                                    <h6 class="card-title">{{this.title}}</h6>
+                                </div>
+                                <img src="{{#if this.poster_path}}https://image.tmdb.org/t/p/w400{{this.poster_path}}
+                                    {{else}}https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700{{/if}}"
+                                    alt="MoviePoster" id="MoviePoster">
+                                <p class="card-text"></p>
+                                <a class="DetailMovie  mb-2" href="/detail/?idMovie={{this.id}}"
+                                    style="cursor: pointer;"><button
+                                        class="btn btn-secondary detail">Detalles</button></a>
+                            </div>
+                        </div>
+                        {{/each}}{{else}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <img class="card-img"
+                                    src="https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700"
+                                    alt="MoviePoster">
+                            </div>
+                        </div>
+                        {{/if}}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CoreUI and necessary plugins-->
+            <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+            <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

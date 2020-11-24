@@ -1,0 +1,121 @@
+@media only screen and (max-width: 2222222px)  {
+    #MovieGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1650px)  {
+    #MovieGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+ @media only screen and (max-width: 1400px)  {
+    #MovieGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+} 
+
+
+@media only screen and (max-width: 1100px)  {
+    #MovieGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+   #imgApi{
+        width:501px;
+        height:198px; 
+    }
+    .detail{
+        margin-top: 0px;
+        padding: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 580px)  {
+    #MovieGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .imgLogo{
+        visibility: hidden;
+    }
+   #imgApi{
+        width:401px;
+        height:148px; 
+    }
+}
+body{
+    min-width:550px;
+}
+
+.card-img-top{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+#header-tooltip{
+    border: none;
+    background: transparent;
+    outline:none;
+
+}
+#MovieGrid{
+  grid-gap: 10px;
+  justify-content: center;
+}
+.card{
+    padding: 10px;
+}
+.imgLogo{
+    width: 60px;
+    height: 50px;
+}
+.card-img-top{
+    height: 80%;
+}
+.c-header{
+    border:none;
+}
+.card-header{
+    border:none;
+    padding:0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.lightMode{
+    background-color: red;
+}
+
+.num{
+    color: #d40242;
+    font-weight: 700;
+    font-size: 4em;
+    line-height: 1.1em;
+    opacity: 0.7;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    text-align: right;
+}
+
+.card-title{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.detail{
+    color:black;
+    padding: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: -8px;
+}
+#MoviePoster{
+    box-shadow: 0px -1px 40px 14px rgba(0,0,0,0.61);
+    width: 80%;
+    height: 80%;
+}
